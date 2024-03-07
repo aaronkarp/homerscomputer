@@ -1,0 +1,318 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#simpsons__blinky__container {
+  visibility: hidden;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+#simpsons__blinky {
+  width: 100vw;
+  height: 33vh;
+  overflow: hidden;
+  background: transparent;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+#simpsons__blinky__svg {
+  height: 20vh;
+  position: absolute;
+  left: 100vw;
+  bottom: 25vh;
+  z-index: 1;
+}
+
+#simpsons__blinky__svg.animate {
+  animation-name: blinkySwim;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.3, 0.1, 0.1, 0.4);
+  animation-delay: 3s;
+  animation-duration: 10s;
+}
+
+#simpsons__blinky__fill.hide {
+  display: none;
+}
+
+#simpsons__blinky__fill.animate {
+  animation-name: fillAction;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  display: block;
+}
+
+#simpsons__blinky__water {
+  position: relative;
+  z-index: 10;
+}
+
+#simpsons__blinky__waveShape {
+  width: 3000vw;
+  height: 50vh;
+  fill: rgba(4, 172, 255, 0.35);
+}
+
+#simpsons__blinky__waveShape.animate {
+  animation-name: waveAction;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 0.5s;
+}
+
+@keyframes fillAction {
+  0% {
+    transform: translate(0, 33vh);
+  }
+  100% {
+    transform: translate(0, 3vh);
+  }
+}
+
+@keyframes waveAction {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes blinkySwim {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-23vw, -25%);
+  }
+  66% {
+    transform: translate(-56vw, 25%);
+  }
+  100% {
+    transform: translate(-130vw, 0);
+  }
+}
+
+#simpsons__pig {
+  width: 25vw;
+}
+
+#simpsons__frame__1,
+#simpsons__frame__2,
+#simpsons__frame__3,
+#simpsons__frame__4 {
+  display: none;
+}
+
+.simpsons__st0 {
+  fill: #2c1c14;
+}
+
+.simpsons__st1 {
+  fill: #994d2d;
+}
+
+.simpsons__st2 {
+  fill: none;
+}
+
+.simpsons__st3 {
+  fill: #930304;
+}
+
+.simpsons__st4 {
+  fill: #472b15;
+}
+
+.simpsons__st5 {
+  fill: #441808;
+}
+
+.simpsons__st6 {
+  fill: none;
+}
+
+.simpsons__st0,
+.simpsons__st1,
+.simpsons__st2,
+.simpsons__st3,
+.simpsons__st4,
+.simpsons__st5 {
+  stroke: #000;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.pig__motionPath__svg {
+  position: fixed;
+  left: -5vw;
+  top: 30vh;
+  width: 110vw;
+  overflow-y: hidden;
+}
+
+.simpsons__computerContainer {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 300px;
+  perspective-origin: 50% 50%;
+}
+
+.simpsons__computerContainer svg {
+  width: 100%;
+}
+
+.simpsons__computerScreen {
+  position: absolute;
+  left: 96px;
+  top: 35px;
+  width: 103px;
+  height: 79px;
+  background-color: transparent;
+  border-radius: 6%;
+  padding: 4px 0 0 4px;
+  font-family: "VT323", monospace;
+  color: lime;
+  font-size: 0.75rem;
+  text-shadow: lime 0px 0px 5px;
+  transform: rotateX(18deg) rotateY(-31deg) rotateZ(7deg);
+}
+
+#simpsons__computerScreen__terminalPrompt {
+  display: block;
+  width: 95px;
+  height: 45px;
+  padding: 0;
+  margin: 5px 0 0;
+  background-color: black;
+  color: lime;
+  font-family: "VT323", monospace;
+  text-transform: uppercase;
+  border: none;
+  font-size: 0.75rem;
+  text-shadow: lime 0px 0px 5px;
+  overflow: hidden;
+}
+
+#simpsons__computerScreen__terminalPrompt:focus {
+  outline: none;
+  caret-color: transparent;
+}
+
+#simpsons__computerScreen__terminalPrompt.on::after {
+  content: "_";
+  color: lime;
+}
+
+#mrSparkle__main,
+#simpsons__pig__container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#mrSparkle__background__container {
+  position: fixed;
+  left: -10vw;
+  top: -10vh;
+  width: 120vw;
+  height: 120vh;
+}
+
+#mrSparkle__background {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mrSparkle__logo {
+  position: relative;
+  width: 310px;
+  height: 600px;
+}
+
+#mrSparkle__container {
+  position: absolute;
+  left: 150px;
+  top: 230px;
+  width: 135px;
+}
+
+#mrSparkle__name__container {
+  position: absolute;
+  left: 20px;
+  top: 105px;
+  width: 255px;
+}
+
+#mrSparkle__tagline__container {
+  position: absolute;
+  left: 5px;
+  top: 320px;
+  width: 150px;
+}
+
+@media screen and (min-width: 960px) {
+  .simpsons__computerContainer {
+    width: 400px;
+    perspective: 450px;
+  }
+
+  .simpsons__computerScreen {
+    left: 129px;
+    top: 47px;
+    width: 137px;
+    height: 105px;
+    padding: 5px 0 0 5px;
+    font-size: 1.2rem;
+    transform: rotateX(18deg) rotateY(-31deg) rotateZ(7deg);
+  }
+
+  #simpsons__computerScreen__terminalPrompt {
+    width: 131px;
+    height: 57px;
+    padding: 0;
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+
+  .mrSparkle__logo {
+    width: 700px;
+    height: 600px;
+  }
+
+  #mrSparkle__container {
+    left: 340px;
+    top: 215px;
+    width: 210px;
+  }
+
+  #mrSparkle__name__container {
+    left: 125px;
+    top: 35px;
+    width: 390px;
+  }
+
+  #mrSparkle__tagline__container {
+    left: 95px;
+    top: 340px;
+    width: 250px;
+  }
+}
